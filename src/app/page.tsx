@@ -7,9 +7,6 @@ export default function Home() {
   const [response, setResponse] = useState("");
   const [loading, setLoading] = useState(false);
 
-  console.log(message);
-  console.log(response);
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
@@ -39,6 +36,21 @@ export default function Home() {
           OpenAI Agents SDK チュートリアル
         </h1>
 
+        {/* ツール機能の説明 */}
+        <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+          <h2 className="text-lg font-semibold text-blue-800 mb-2">
+            🌤️ 新機能：天気ツール
+          </h2>
+          <p className="text-blue-700 text-sm">
+            このAgentは天気情報を取得するツールを使用できます。以下のような質問を試してみてください：
+          </p>
+          <ul className="text-blue-600 text-sm mt-2 space-y-1">
+            <li>• 「東京の天気を教えて」</li>
+            <li>• 「大阪は今日どんな天気？」</li>
+            <li>• 「札幌の気温は？」</li>
+          </ul>
+        </div>
+
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="block text-sm font-medium mb-2">
@@ -49,7 +61,7 @@ export default function Home() {
               onChange={(e) => setMessage(e.target.value)}
               className="w-full p-3 border rounded-lg"
               rows={3}
-              placeholder="例：プログラミングの再帰について俳句を作ってください"
+              placeholder="例：東京の天気を教えてください"
             ></textarea>
           </div>
 

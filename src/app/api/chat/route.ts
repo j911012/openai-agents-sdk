@@ -19,11 +19,17 @@ export async function POST(request: NextRequest) {
 
     const agent = createBasicAgent();
     // デバック用
-    console.log("Agent created");
+    console.log(
+      "Agent created with tools:",
+      agent.tools?.map((tool) => tool.name)
+    );
 
     const result = await run(agent, message);
     // デバック用
-    console.log("Result:", result);
+    console.dir(result, { depth: null });
+
+    // ツールの使用状況をログ出力（簡易版）
+    console.log("Final output:", result.finalOutput);
 
     return NextResponse.json({
       response: result.finalOutput,

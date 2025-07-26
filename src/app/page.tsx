@@ -36,18 +36,17 @@ export default function Home() {
           OpenAI Agents SDK チュートリアル
         </h1>
 
-        {/* ツール機能の説明 */}
-        <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <h2 className="text-lg font-semibold text-blue-800 mb-2">
-            🌤️ 新機能：天気ツール
+        {/* マルチエージェント機能の説明 */}
+        <div className="mb-6 p-4 bg-green-50 rounded-lg border border-green-200">
+          <h2 className="text-lg font-semibold text-green-800 mb-2">
+            新機能：マルチエージェントシステム
           </h2>
-          <p className="text-blue-700 text-sm">
-            このAgentは天気情報を取得するツールを使用できます。以下のような質問を試してみてください：
+          <p className="text-green-700 text-sm">
+            このシステムは2つの専門Agentが連携して質問に回答します：
           </p>
-          <ul className="text-blue-600 text-sm mt-2 space-y-1">
-            <li>• 「東京の天気を教えて」</li>
-            <li>• 「大阪は今日どんな天気？」</li>
-            <li>• 「札幌の気温は？」</li>
+          <ul className="text-green-600 text-sm mt-2 space-y-1">
+            <li>• 天気専門Agent: 「東京の天気を教えて」</li>
+            <li>• 翻訳専門Agent: 「こんにちはをぱん語に翻訳して」</li>
           </ul>
         </div>
 
@@ -61,7 +60,7 @@ export default function Home() {
               onChange={(e) => setMessage(e.target.value)}
               className="w-full p-3 border rounded-lg"
               rows={3}
-              placeholder="例：東京の天気を教えてください"
+              placeholder="例：東京の天気を教えてください、こんにちはをぱん語に翻訳して"
             ></textarea>
           </div>
 
